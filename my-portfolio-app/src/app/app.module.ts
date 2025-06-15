@@ -12,7 +12,6 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 import { BookShelfComponent } from './components/book-shelf/book-shelf.component';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -31,7 +30,6 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule,
     FormsModule
   ],
   providers: [],
