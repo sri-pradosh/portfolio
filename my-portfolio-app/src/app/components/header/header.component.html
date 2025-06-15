@@ -1,0 +1,30 @@
+<header class="header" [class.scrolled]="isScrolled">
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="#home">Portfolio</a>
+                </div>
+
+                <div class="nav-links" [class.active]="isMobileMenuOpen">
+                    <a href="#home" (click)="closeMobileMenu()">Home</a>
+                    <a href="#about" (click)="closeMobileMenu()">About</a>
+                    <a href="#experiences" (click)="closeMobileMenu()">Experiences</a>
+                    <a href="#portfolio" (click)="closeMobileMenu()">Portfolio</a>
+                    <a href="#bookNook" (click)="closeMobileMenu()">Book Shelf</a>
+                    <a href="#contact" (click)="closeMobileMenu()">Contact</a>
+                </div>
+
+                <div class="nav-actions">
+                    <app-theme-toggle></app-theme-toggle>
+                    <button class="mobile-menu-btn" (click)="toggleMobileMenu()" [attr.aria-expanded]="isMobileMenuOpen"
+                        aria-label="Toggle navigation menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

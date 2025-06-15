@@ -1,0 +1,23 @@
+<div class="carousel-section" id="bookNook">
+    <h2 class="section-title">The Book Shelf (Ink & Ideas)</h2>
+    <!-- <p class="section-subtitle"> -->
+    <blockquote>
+        "ஓதுவது ஒழியேல்"
+        - ஔவையார்
+    </blockquote>
+    <!-- - </p> -->
+
+    <div class="carousel-container">
+        <div class="book-nook-wrapper">
+            <button class="nav-btn left" (click)="scrollLeft()" [hidden]="!canScrollLeft">&#8249;</button>
+
+            <div class="book-nook-carousel" #scrollContainer>
+                <div class="book-card" *ngFor="let book of bookImages">
+                    <img [src]="book?.src" [alt]="book?.title" />
+                </div>
+            </div>
+
+            <button class="nav-btn right" (click)="scrollRight()" [hidden]="!canScrollRight">&#8250;</button>
+        </div>
+    </div>
+</div>
