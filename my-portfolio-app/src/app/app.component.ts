@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { HeaderComponent } from "./components/header/header.component";
 import { HeroComponent } from "./components/hero/hero.component";
@@ -16,7 +16,7 @@ import { BookShelfComponent } from "./components/book-shelf/book-shelf.component
   standalone: false,
   // imports: [HeaderComponent, HeroComponent, AboutComponent, ServicesComponent, PortfolioComponent, BookShelfComponent, ContactComponent, FooterComponent]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'my-portfolio-app';
 
   constructor(private router: Router) {
@@ -29,7 +29,7 @@ export class AppComponent {
       this.scrollToSection();
     });
     // Initial scroll on load
-    setTimeout(() => this.scrollToSection(), 100);
+    setTimeout(() => this.scrollToSection(), 500);
   }
 
   handleNavigation() {
@@ -43,16 +43,12 @@ export class AppComponent {
   scrollToSection() {
     const hash = window.location.hash.substring(1);
     if (hash) {
-      const element = document.getElementById(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    } else {
-      // Default to home if no hash
-      const homeElement = document.getElementById('home');
-      if (homeElement) {
-        homeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 0);
     }
   }
 }
